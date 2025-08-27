@@ -67,26 +67,30 @@
             height: 150px;
         }
 
-        /* VLibras iframe para demonstração */
-        iframe#vlibras-iframe {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 320px;
-            height: 400px;
-            border: none;
-            z-index: 1000;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        /* Botão VLibras */
+        .vlibras-btn {
+            display: block;
+            text-align: center;
+            margin: 30px auto;
+        }
+
+        .vlibras-btn a {
+            background-color: #009ee3;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .vlibras-btn a:hover {
+            background-color: #007bbd;
         }
 
         @media (max-width: 600px) {
             .item {
                 flex-direction: column;
                 align-items: flex-start;
-            }
-            iframe#vlibras-iframe {
-                width: 200px;
-                height: 300px;
             }
         }
     </style>
@@ -125,13 +129,14 @@
 
         <div class="qr-container">
             <p>Abra este cardápio no seu celular:</p>
-            <!-- Você pode gerar um QR Code real apontando para o GitHub Pages -->
             <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://willianbaldez.github.io/cardapio-vlibras/cardapio.html&size=150x150" alt="QR Code do Cardápio">
         </div>
+
+        <div class="vlibras-btn">
+            <a href="https://vlibras.gov.br/app" target="_blank">
+                Abrir cardápio com VLibras
+            </a>
+        </div>
     </div>
-
-    <!-- VLibras via iframe para demonstração -->
-    <iframe id="vlibras-iframe" src="https://vlibras.gov.br/app" title="VLibras"></iframe>
-
 </body>
 </html>
