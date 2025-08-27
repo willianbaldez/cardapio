@@ -2,47 +2,72 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Cardápio - Restaurante Exemplo</title>
+    <title>Cardápio Moderno - Restaurante Exemplo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            background: #fff8f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fef9f4;
             color: #333;
         }
-        h1 {
-            color: #d35400;
+
+        header {
+            background-color: #d35400;
+            color: #fff;
             text-align: center;
+            padding: 20px 0;
         }
-        h2 {
-            color: #e67e22;
-            margin-top: 30px;
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
         }
+
+        .container {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
         .section {
-            margin-bottom: 20px;
+            margin-bottom: 40px;
         }
+
+        .section h2 {
+            font-size: 1.5rem;
+            color: #e67e22;
+            border-bottom: 2px solid #e67e22;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
         .item {
-            margin: 10px 0;
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
         }
-        .price {
+
+        .item span.price {
             font-weight: bold;
+            color: #d35400;
         }
-        @media (max-width: 600px) {
-            body {
-                padding: 10px;
-            }
-            .item {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .price {
-                margin-top: 5px;
-            }
+
+        /* QR Code */
+        .qr-container {
+            text-align: center;
+            margin-top: 30px;
         }
-        /* Estilo do iframe VLibras */
+
+        .qr-container img {
+            width: 150px;
+            height: 150px;
+        }
+
+        /* VLibras iframe para demonstração */
         iframe#vlibras-iframe {
             position: fixed;
             bottom: 20px;
@@ -51,40 +76,61 @@
             height: 400px;
             border: none;
             z-index: 1000;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        @media (max-width: 600px) {
+            .item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            iframe#vlibras-iframe {
+                width: 200px;
+                height: 300px;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Cardápio Restaurante Exemplo</h1>
+    <header>
+        <h1>Cardápio Restaurante Exemplo</h1>
+    </header>
 
-    <div class="section">
-        <h2>Entradas</h2>
-        <div class="item">Salada Verde <span class="price">R$ 12,00</span></div>
-        <div class="item">Coxinha de Frango <span class="price">R$ 8,00</span></div>
+    <div class="container">
+        <div class="section">
+            <h2>Entradas</h2>
+            <div class="item">Salada Verde <span class="price">R$ 12,00</span></div>
+            <div class="item">Coxinha de Frango <span class="price">R$ 8,00</span></div>
+        </div>
+
+        <div class="section">
+            <h2>Pratos Principais</h2>
+            <div class="item">Hambúrguer Tradicional <span class="price">R$ 20,00</span></div>
+            <div class="item">Filé de Frango Grelhado <span class="price">R$ 22,00</span></div>
+            <div class="item">Risoto de Cogumelos <span class="price">R$ 25,00</span></div>
+        </div>
+
+        <div class="section">
+            <h2>Bebidas</h2>
+            <div class="item">Suco Natural <span class="price">R$ 6,00</span></div>
+            <div class="item">Refrigerante <span class="price">R$ 5,00</span></div>
+            <div class="item">Água Mineral <span class="price">R$ 3,00</span></div>
+        </div>
+
+        <div class="section">
+            <h2>Sobremesas</h2>
+            <div class="item">Brigadeiro Gourmet <span class="price">R$ 7,00</span></div>
+            <div class="item">Pudim de Leite <span class="price">R$ 6,00</span></div>
+        </div>
+
+        <div class="qr-container">
+            <p>Abra este cardápio no seu celular:</p>
+            <!-- Você pode gerar um QR Code real apontando para o GitHub Pages -->
+            <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://willianbaldez.github.io/cardapio-vlibras/cardapio.html&size=150x150" alt="QR Code do Cardápio">
+        </div>
     </div>
 
-    <div class="section">
-        <h2>Pratos Principais</h2>
-        <div class="item">Hambúrguer Tradicional <span class="price">R$ 20,00</span></div>
-        <div class="item">Filé de Frango Grelhado <span class="price">R$ 22,00</span></div>
-        <div class="item">Risoto de Cogumelos <span class="price">R$ 25,00</span></div>
-    </div>
-
-    <div class="section">
-        <h2>Bebidas</h2>
-        <div class="item">Suco Natural <span class="price">R$ 6,00</span></div>
-        <div class="item">Refrigerante <span class="price">R$ 5,00</span></div>
-        <div class="item">Água Mineral <span class="price">R$ 3,00</span></div>
-    </div>
-
-    <div class="section">
-        <h2>Sobremesas</h2>
-        <div class="item">Brigadeiro Gourmet <span class="price">R$ 7,00</span></div>
-        <div class="item">Pudim de Leite <span class="price">R$ 6,00</span></div>
-    </div>
-
-    <!-- VLibras via iframe -->
+    <!-- VLibras via iframe para demonstração -->
     <iframe id="vlibras-iframe" src="https://vlibras.gov.br/app" title="VLibras"></iframe>
 
 </body>
