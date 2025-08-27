@@ -42,6 +42,17 @@
                 margin-top: 5px;
             }
         }
+        /* Estilo do iframe VLibras */
+        iframe#vlibras-iframe {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 320px;
+            height: 400px;
+            border: none;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
     </style>
 </head>
 <body>
@@ -73,10 +84,8 @@
         <div class="item">Pudim de Leite <span class="price">R$ 6,00</span></div>
     </div>
 
-    <!-- VLibras Widget oficial via script CDN -->
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>
-        new window.VLibras.Widget('https://vlibras.gov.br/app');
-    </script>
+    <!-- VLibras via iframe -->
+    <iframe id="vlibras-iframe" src="https://vlibras.gov.br/app" title="VLibras"></iframe>
+
 </body>
 </html>
