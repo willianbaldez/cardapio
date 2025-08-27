@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cardápio - Restaurante Exemplo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #fff8f0;
+            color: #333;
+        }
+        h1 {
+            color: #d35400;
+            text-align: center;
+        }
+        h2 {
+            color: #e67e22;
+            margin-top: 30px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .item {
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        .price {
+            font-weight: bold;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .price {
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Cardápio Restaurante Exemplo</h1>
+
+    <div class="section">
+        <h2>Entradas</h2>
+        <div class="item">Salada Verde <span class="price">R$ 12,00</span></div>
+        <div class="item">Coxinha de Frango <span class="price">R$ 8,00</span></div>
+    </div>
+
+    <div class="section">
+        <h2>Pratos Principais</h2>
+        <div class="item">Hambúrguer Tradicional <span class="price">R$ 20,00</span></div>
+        <div class="item">Filé de Frango Grelhado <span class="price">R$ 22,00</span></div>
+        <div class="item">Risoto de Cogumelos <span class="price">R$ 25,00</span></div>
+    </div>
+
+    <div class="section">
+        <h2>Bebidas</h2>
+        <div class="item">Suco Natural <span class="price">R$ 6,00</span></div>
+        <div class="item">Refrigerante <span class="price">R$ 5,00</span></div>
+        <div class="item">Água Mineral <span class="price">R$ 3,00</span></div>
+    </div>
+
+    <div class="section">
+        <h2>Sobremesas</h2>
+        <div class="item">Brigadeiro Gourmet <span class="price">R$ 7,00</span></div>
+        <div class="item">Pudim de Leite <span class="price">R$ 6,00</span></div>
+    </div>
+
+    <!-- VLibras Widget oficial via script CDN -->
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+</body>
+</html>
